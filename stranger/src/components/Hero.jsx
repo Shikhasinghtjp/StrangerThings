@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef} from 'react'
+import { useNavigate } from "react-router-dom"
 import { motion } from 'framer-motion'
 import './Hero.css'
-import Navbar from './Navbar'
 
 const Hero = () => {
   const heroRef = useRef(null)
   const revealRef = useRef(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const hero = heroRef.current
@@ -66,16 +67,16 @@ const Hero = () => {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 70, damping: 12 } },
   }
 
-  const navbarVariant = {
-    hidden: { y: -100, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 80, damping: 14 } },
-  }
+  // const navbarVariant = {
+  //   hidden: { y: -100, opacity: 0 },
+  //   visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 80, damping: 14 } },
+  // }
 
   return (
     <div className="hero" ref={heroRef}>
-      <motion.div variants={navbarVariant} initial="hidden" animate="visible">
+      {/* <motion.div variants={navbarVariant} initial="hidden" animate="visible">
         <Navbar />
-      </motion.div>
+      </motion.div> */}
 
       <motion.div className="hero-content" variants={container} initial="hidden" animate="visible">
         <motion.div className="left" variants={item}>
@@ -87,9 +88,12 @@ const Hero = () => {
             a hidden world awakens beneath Hawkins.
             Some doors, once opened, can never be closed.
           </motion.p>
-          <motion.button className="st-btn" variants={item}>
-            Enter the Upside Down
-          </motion.button>
+          <button
+  className="st-btn"
+  onClick={() => navigate("/upside-down")}
+>
+  Enter the Upside Down
+</button>
         </motion.div>
 
         <motion.div className="right" variants={item}>

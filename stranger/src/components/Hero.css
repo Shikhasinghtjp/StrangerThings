@@ -114,3 +114,11 @@ text-shadow:
     
     
       }
+
+      @media (max-width: 768px) {
+        .left, .right {
+          position: static;
+          width: 100%;
+        }
+      }
+      

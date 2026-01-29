@@ -1,0 +1,65 @@
+.characters {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #5e4747 0%, #515050 70%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 100px 60px;
+}
+
+/* CARD */
+.char-card {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* IMAGE WRAPPER */
+.img-wrapper {
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* IMAGE */
+.char-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  filter: grayscale(70%);
+  transition: all 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.char-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+  box-shadow: 0 0 45px rgba(179, 0, 0, 0.85);
+}
+
+/* NAME */
+.char-card h2 {
+  margin-top: 16px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #ff4d4d;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.char-card:hover h2 {
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .characters {
+    padding: 80px 30px;
+    gap: 30px;
+  }
+
+  .char-card img {
+    height: 260px;
+  }
+}

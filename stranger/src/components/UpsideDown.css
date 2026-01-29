@@ -1,0 +1,16 @@
+.upside-world {
+    height: 100vh;
+    background: url("/images/upside.jpg");
+    background-size: cover;
+    filter: invert(1) hue-rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .upside-world h1 {
+    font-size: 80px;
+    color: red;
+    text-shadow: 0 0 30px red;
+  }
+  
